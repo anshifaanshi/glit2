@@ -1,0 +1,175 @@
+:root {
+    --primary-green: #4CAF50;
+    --dark-bg: #111111;
+    --light-text: #ffffff;
+    --faded-text: #aaaaaa;
+    --logo-color: var(--primary-green);
+    --border-color: #333;
+}
+
+/* --- Footer Container --- */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: Arial, sans-serif;
+    padding: 6rem 1rem 1.5rem; /* Top padding for content, bottom for copyright */
+}
+
+.footer-content-main {
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two main columns */
+    gap: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color); /* Subtle separator above copyright */
+}
+
+/* --- Left Column: About/Logo --- */
+.footer-about {
+    text-align: left;
+}
+
+.footer-logo {
+    color: var(--logo-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.footer-text {
+    color: var(--faded-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- Right Column: Subscription --- */
+.footer-subscribe {
+    text-align: left;
+    max-width: 450px; /* Constrain the subscription box */
+    justify-self: end;
+}
+
+.subscribe-title {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.subscribe-text {
+    color: var(--faded-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+}
+
+.email-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: var(--faded-text);
+}
+
+.subscribe-form input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1rem;
+    outline: none;
+    padding: 0.5rem 0;
+}
+
+.subscribe-form input::placeholder {
+    color: var(--faded-text);
+}
+
+.subscribe-button {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    border: none;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.subscribe-button:hover {
+    background-color: #3e8e41;
+}
+
+/* --- Footer Bottom (Copyright) --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    color: var(--faded-text);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-bottom a {
+    color: var(--faded-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: var(--primary-green);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .footer-content-main {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 3rem;
+    }
+
+    .footer-subscribe {
+        justify-self: start;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-subscribe {
+        padding-right: 0;
+    }
+
+    .subscribe-form {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+
+    .subscribe-button {
+        padding: 1rem 1.5rem;
+        margin-top: 10px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
