@@ -1,0 +1,6 @@
+canvas + div {
+  display: none !important;
+}
+.spline-container {
+  pointer-events: none; /* disables all mouse interaction */
+}

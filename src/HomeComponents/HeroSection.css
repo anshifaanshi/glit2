@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 50px; /* Adjust padding as needed */
+  padding: 20px 50px;
   box-sizing: border-box;
 }
 
@@ -26,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-bottom: 20px; /* Space between header and content */
+  padding-bottom: 20px;
 }
 
 .welcome-text {
@@ -48,16 +48,16 @@
 }
 
 .hero-content {
-  flex-grow: 1; /* Allows content to take available space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 60%; /* Adjust as needed for text width */
-  margin-bottom: 50px; /* Space between content and buttons */
+  max-width: 60%;
+  margin-bottom: 50px;
 }
 
 .hero-content h1 {
-  font-size: 3.5em; /* Adjust font size */
+  font-size: 3.5em;
   line-height: 1.2;
   margin: 0;
   font-weight: 900;
@@ -124,6 +124,40 @@
   white-space: nowrap;
 }
 
+/* Dropdown menu styling - match hero buttons */
+/* Dropdown menu container */
+.dropdown-menu {
+  position: absolute;
+  top: 60px; /* below the menu bar */
+  right: 20px;
+  background-color: #59BC53; /* green background */
+  border-radius: 5px;
+  padding: 5px 0; /* smaller padding to make menu compact */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+  min-width: 140px; /* smaller width */
+}
+
+/* Dropdown items */
+.dropdown-item {
+  display: block;
+  padding: 8px 15px; /* smaller padding */
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+  color: #59BC53;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-overlay {
@@ -153,6 +187,6 @@
   }
 
   .scroll-down {
-    display: none; /* Hide scroll down on smaller screens if preferred */
+    display: none;
   }
 }
