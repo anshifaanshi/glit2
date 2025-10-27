@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import './HeroSection.css'; // CSS file for styling
-import { Link } from 'react-router-dom';
+
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false); // close dropdown after clicking
+  };
 
   return (
     <div
@@ -14,67 +22,36 @@ const HeroSection = () => {
       }}
     >
       <div className="hero-overlay">
-        <header className="hero-header">
+        {/* Header/Menu */}
+        <div className="hero-header">
           <div className="welcome-text">WELCOME TO GLINT</div>
           <div className="menu-icon" onClick={toggleMenu}>
-            MENU <span className="hamburger">&#9776;</span>
+            {menuOpen ? 'CLOSE MENU ✖' : 'MENU ☰'}
           </div>
-        </header>
+        </div>
 
-       <div className="dropdown-menu">
-  <button
-    className="dropdown-item"
-    onClick={() => {
-      document.getElementById('home-section').scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
-    }}
-  >
-    Home
-  </button>
+        {/* Dropdown Menu (Toggle) */}
+        {menuOpen && (
+          <div className="dropdown-menu">
+            <button className="dropdown-item" onClick={() => scrollToSection('home-section')}>Home</button>
+            <button className="dropdown-item" onClick={() => scrollToSection('about-section')}>About</button>
+            <button className="dropdown-item" onClick={() => scrollToSection('contact-section')}>Contact</button>
+            <button className="dropdown-item" onClick={() => scrollToSection('portfolio-section')}>Portfolio</button>
+          </div>
+        )}
 
-  <button
-    className="dropdown-item"
-    onClick={() => {
-      document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
-    }}
-  >
-    About
-  </button>
-
-  <button
-    className="dropdown-item"
-    onClick={() => {
-      document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
-    }}
-  >
-    Contact
-  </button>
-
-  <button
-    className="dropdown-item"
-    onClick={() => {
-      document.getElementById('portfolio-section').scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
-    }}
-  >
-    Portfolio
-  </button>
-</div>
-
-      
-
+        {/* Hero Content */}
         <div className="hero-content">
           <h1>
             We are a creative group of people who design influential brands and digital experiences.
           </h1>
           <div className="hero-buttons">
-            <button className="hero-button">START A PROJECT</button>
-            <button className="hero-button">MORE ABOUT US</button>
+            <button className="hero-button" onClick={() => scrollToSection('portfolio-section')}>START A PROJECT</button>
+            <button className="hero-button" onClick={() => scrollToSection('about-section')}>MORE ABOUT US</button>
           </div>
         </div>
 
+        {/* Social Links */}
         <div className="social-links">
           <a href="#" className="social-icon">f</a>
           <a href="#" className="social-icon">t</a>
