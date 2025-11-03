@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './HeroSection.css'; // CSS file for styling
-
+import { Link } from 'react-router-dom';
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,15 +31,23 @@ const HeroSection = () => {
         </div>
 
         {/* Dropdown Menu (Toggle) */}
-        {menuOpen && (
-          <div className="dropdown-menu">
-            <button className="dropdown-item" onClick={() => scrollToSection('home-section')}>Home</button>
-            <button className="dropdown-item" onClick={() => scrollToSection('about-section')}>About</button>
-            <button className="dropdown-item" onClick={() => scrollToSection('contact-section')}>Contact</button>
-            <button className="dropdown-item" onClick={() => scrollToSection('portfolio-section')}>Portfolio</button>
-          </div>
-        )}
-
+       
+ {menuOpen && (
+        <div className="dropdown-menu">
+          <Link to="/" className="dropdown-item" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to="/about" className="dropdown-item" onClick={() => setMenuOpen(false)}>
+            About
+          </Link>
+          <Link to="/contact" className="dropdown-item" onClick={() => setMenuOpen(false)}>
+            Contact
+          </Link>
+          <Link to="/portfolio" className="dropdown-item" onClick={() => setMenuOpen(false)}>
+            Portfolio
+          </Link>
+        </div>
+      )}
         {/* Hero Content */}
         <div className="hero-content">
           <h1>
