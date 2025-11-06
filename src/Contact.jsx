@@ -1,12 +1,13 @@
 import React from 'react'
 import ContactSection from './HomeComponents/ContactSection'
-import ContactHeader from './ContactComponents/ContactHeader'
-
+import AnimatedNavSection from './ContactComponents/FirstSection'
+import Footer from './HomeComponents/Footer'
 function Contact() {
   return (
     <div>
-        <ContactHeader/>
+ <AnimatedNavSection/>
         <ContactSection/>
+        <Footer/>
     </div>
   )
 }
