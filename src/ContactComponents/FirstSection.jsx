@@ -35,7 +35,7 @@ export default function AnimatedNavSection() {
 
   const textStyle = {
     fontSize: '24px',
-    color: '#34d399',
+    color: ' #4CAF50',
     cursor: 'pointer',
     transition: 'opacity 0.3s ease',
     textDecoration: 'none',

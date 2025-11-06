@@ -123,7 +123,7 @@ const RecentWorksGrid = () => {
     position: 'absolute',
     top: '20px',
     right: '20px',
-    backgroundColor: '#34d399', 
+    backgroundColor: ' #4CAF50', 
     color: '#1a1a1a', 
     padding: '10px 18px',
     fontSize: '14px',
@@ -138,7 +138,7 @@ const RecentWorksGrid = () => {
 
   // --- Styles for the Text Content ---
   const subtitleStyles = {
-    color: '#34d399', 
+    color: ' #4CAF50', 
     fontSize: '16px',
     fontWeight: 'bold',
     letterSpacing: '1px',
@@ -157,7 +157,7 @@ const RecentWorksGrid = () => {
   const dividerStyles = {
     width: '200px', 
     height: '2px',
-    backgroundColor: '#34d399', 
+    backgroundColor: ' #4CAF50', 
     margin: '0 auto 60px auto', 
   };
 
